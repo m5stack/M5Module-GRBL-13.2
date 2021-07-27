@@ -1,4 +1,8 @@
-#include <M5Stack.h>
+
+#ifndef _MODULE_GRBL_H_
+#define _MODULE_GRBL_H_
+
+#include <Arduino.h>
 
 class GRBL
 {
@@ -25,3 +29,5 @@ class GRBL
         bool readIdle();
         bool inLock();
 };
+
+#endif
