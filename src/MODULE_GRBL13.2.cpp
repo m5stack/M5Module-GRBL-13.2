@@ -1,13 +1,7 @@
 #include "MODULE_GRBL13.2.h"
-#include <Wire.h>
 
 GRBL::GRBL(uint8_t addr){
     this->addr = addr;
-}
-
-void GRBL::Init()		
-{
-    _Wire = &Wire1;
 }
 
 void GRBL::Init(TwoWire *Wire)		
