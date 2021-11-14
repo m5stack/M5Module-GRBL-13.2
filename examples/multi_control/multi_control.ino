@@ -1,12 +1,25 @@
 /*
-    Description: GRBL 13.2 Module TEST Example.Stack two Module at the same time.
+*******************************************************************************
+* Copyright (c) 2021 by M5Stack
+*                  Equipped with M5Core sample source code
+*                          配套  M5Core 示例源代码
+* Visit the website for more information：https://docs.m5stack.com/en/module/grbl13.2
+* 获取更多资料请访问：https://docs.m5stack.com/zh_CN/module/grbl13.2
+*
+* describe: GRBL 13.2 Module.
+* date：2021/11/14
+*******************************************************************************
+  GRBL 13.2 Module TEST Example,use I2C to control stepper motors(Stack two Module at the same time)
+  步进电机模块测试示例,使用I2C控制步进电机(同时堆叠两个模块)
 */
 #include <M5Stack.h>
 #include "MODULE_GRBL13.2.h"
 
 /*
  * The I2C address of GRBL 13.2  Module is 0x70 by default.
+ * GRBL 13.2 模块的 I2C 地址默认为 0x70。
  * You could use the DIP Switch for modify I2C address to 0x71
+ * 您可以使用拨码开关将 I2C 地址修改为 0x71
  */
 
 #define STEPMOTOR_I2C_ADDR_1 0x70
@@ -16,7 +29,6 @@ GRBL _GRBL_A = GRBL(STEPMOTOR_I2C_ADDR_1);
 GRBL _GRBL_B = GRBL(STEPMOTOR_I2C_ADDR_2);
 
 void setup() {
-  // put your setup code here, to run once:
   M5.begin();
   M5.Power.begin();
   Wire.begin(21, 22);
@@ -37,12 +49,9 @@ void setup() {
 }
 
 void loop() {
-  /*
-      If Button A was pressed,
-      stepmotor will rotate back and forth at a time
-   */
-  if (M5.BtnA.wasPressed())  // A button
-  {
+  // If Button A was pressed,stepmotor will rotate back and forth at a time
+  // 如果按下按钮 A，步进电机将一次来回旋转
+  if (M5.BtnA.wasPressed()){  // A button
     Serial.print(_GRBL_A.readStatus());
     _GRBL_A.setMotor(5,5,5,200);
     _GRBL_B.setMotor(5,5,5,200);
@@ -50,8 +59,7 @@ void loop() {
     _GRBL_B.setMotor(0,0,0,200);
   }
 
-  if (M5.BtnB.wasPressed())
-  {
+  if (M5.BtnB.wasPressed()){
        //USE Gcode
       _GRBL_A.sendGcode("G1 X5Y5Z5 F200");
       _GRBL_B.sendGcode("G1 X5Y5Z5 F200");
