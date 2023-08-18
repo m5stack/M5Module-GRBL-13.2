@@ -1,13 +1,15 @@
-# MODULE GRBL13.2
+# M5Module-GRBL-13.2
 
 ## Overview
 
-Contains M5Stack-**MODULE GRBL13.2** series related case programs. 
+### SKU:M035
+
+Contains M5Stack-**MODULE GRBL13.2** series related case programs.
 
 ## Related Link
 
-[Document](https://docs.m5stack.com/en/module/grbl13.2)
+[M5Module-GRBL-13.2 - Document & Datasheet](https://docs.m5stack.com/en/module/grbl13.2)
 
 ## License
 
-[ATOM DTU LoRaWAN - MIT](LICENSE)
+[M5Module-GRBL-13.2 - MIT](LICENSE)
