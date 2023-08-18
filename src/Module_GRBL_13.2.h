@@ -5,7 +5,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-class GRBL {
+class Module_GRBL {
    private:
     void sendByte(byte b);
     void sendBytes(uint8_t *data, size_t size);
@@ -13,7 +13,7 @@ class GRBL {
     uint8_t _addr;
 
    public:
-    GRBL(uint8_t addr = 0x70);
+    Module_GRBL(uint8_t addr = 0x70);
     void Init(TwoWire *Wire = &Wire);
     void Init(TwoWire *Wire, uint32_t x_step, uint32_t y_step, uint32_t z_step,
               uint32_t acc);

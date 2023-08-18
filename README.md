@@ -4,7 +4,7 @@
 
 ### SKU:M035
 
-Contains M5Stack-**MODULE GRBL13.2** series related case programs.
+Contains M5Stack-**Module-GRBL-13.2** series related case programs.
 
 ## Related Link
 
